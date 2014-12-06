@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creative DashBoard</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/dashboardStyles.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<div>
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+		  <li role="presentation"><a href="#artist" role="tab" data-toggle="tab">Artist</a></li>
+		  <li role="presentation" class="active"><a href="#song" role="tab" data-toggle="tab">Song</a></li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+		 <!--Artist Tab-->
+		  <div role="tabpanel" class="tab-pane fade" id="artist">
+		  
+		  </div>
+		  
+		  <!-- Song Tab -->
+		  <div role="tabpanel" class="tab-pane fade in active" id="song">
+			<div class="suggestedSongs">
+				<div class="title" style="color:#939393"><p>Suggested Songs</p></div>
+				
+				<ul class='simple_with_animation'>
+					<li style="width:100%">
+						<div class="stSong">
+							<div class="col-xs-6 col-md-3">
+								<a href="#" class="thumbnail"><img src="examplesong1.png" style="width:100%; height:100%;"></a>
+							</div>
+						</div>
+					</li>
+					<li style="width:100%">
+						<div class="ndSong">
+							<div class="col-xs-6 col-md-3">
+								<a href="#" class="thumbnail"><img src="examplesong2.png" style="width:100%; height:100%;"></a>
+							</div>
+						</div>
+					</li>
+					<li style="width:100%">
+						<div class="rdSong">
+							<div class="col-xs-6 col-md-3">
+								<a href="#" class="thumbnail"><img src="examplesong3.png" style="width:100%; height:100%;"></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="songs">
+				<ul class='simple_with_animation'>
+					<li style="width:100%" >
+						<div class="secondSong" >
+							<div class="col-xs-6 col-md-3" >
+								<a href="#" class="thumbnail" ><img id="secondSong" src="defaultsongplaceholder.png" style="width:100%; height:100%;"></a>
+							</div>
+						</div>
+					</li>
+					<li style="width:100%">
+						<div class="originalSong" >
+							<div class="col-xs-6 col-md-3" >
+								<a href="#" class="thumbnail"><img onclick="selectOriginalSong();" src="originalsong.png" style="width:100%; height:100%;"></a>
+							</div>
+						</div>						
+					</li>
+				</ul>
+			</div>
+			
+			<div class="graph" >
+				<!--<div style="background-color:#333333; color:white; font-size:10px;">
+					<li style="display:inline; margin: 0px 20px 0px 40px;">TEMPO</li>
+					<li style="display:inline; margin: 0px 30px 0px 30px;">BASS</li>
+					<li style="display:inline; margin: 0px 30px 0px 30px;">TREBLE</li>
+					<li style="display:inline; margin: 0px 30px 0px 30px;">MELODY</li>
+					<li style="display:inline; margin: 0px 30px 0px 30px;">HARMONY</li>
+				</div>-->
+				<canvas id="myChart" ></canvas>
+				<div style="background-color:white; color:#939393; font-size:12px;">Overall Creativity</div>
+				<div class="progress" style="width: 88%" >
+					<div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">88%</div>
+				</div>
+			</div>
+			
+			<div class="menu">
+				<div class="home">
+					<div class="col-xs-6 col-md-3">
+						<a href="#" class="thumbnail" ><img src="CreativeMusic_entrypoint.png" style="width:100%; height:100%;"></a>
+					</div>
+				</div>
+				<div class="follows">
+					<div class="col-xs-6 col-md-3">
+						<a href="#" id="popover1" class="thumbnail" tabindex="1" role="button" data-container="body" data-toggle="popover" data-trigger="hover" data-title="Followers" data-content="1 Million Followers"><img src="follows.png" style="width:100%; height:100%;"></a>
+					</div>
+				</div>
+				<div class="shares">
+					<div class="col-xs-6 col-md-3">
+						<a href="#" id="popover2" class="thumbnail" tabindex="1" role="button" data-container="body" data-toggle="popover" data-trigger="hover" data-title="Shares" data-content="150,000 Shares"><img src="shares.png" style="width:100%; height:100%;"></a>
+					</div>
+				</div>
+				<div class="likes">
+					<div class="col-xs-6 col-md-3">
+						<a href="#" id="popover3" class="thumbnail" tabindex="1" role="button" data-container="body" data-toggle="popover" data-trigger="hover" data-title="Likes" data-content="5 Million Likes"><img src="likes.png" style="width:100%; height:100%;"></a>
+					</div>
+				</div>
+				<div class="comments">
+					<div class="col-xs-6 col-md-3">
+						<a href="#" id="popover4" class="thumbnail" tabindex="1" role="button" data-container="body" data-toggle="popover" data-trigger="hover" data-title="Comments" data-content="300,000 Comments"><img src="comments.png" style="width:100%; height:100%;"></a>
+					</div>
+				</div>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="Chart.js-master\Chart.js"></script>
+	<script src='js/jquery-sortable.js'></script>
+	
+	<script>
+
+		function selectOriginalSong(){
+			$('.progress-bar').css('background-color','#FF8000');
+			
+			$('#popover1').attr('data-content', "1 Million Followers");
+			$('#popover2').attr('data-content', "150,000 Shares");
+			$('#popover3').attr('data-content', "5 Million Likes");
+			$('#popover4').attr('data-content', "300,000 Comments");
+		}
+	
+	  $(function () {
+		//tab stuff
+		$('#myTab a:last').tab('show');
+		
+		$('.menu .thumbnail').popover()
+		
+		//drag and dropping items
+		$("ul.simple_with_animation").sortable({
+		  group: 'simple_with_animation',
+		  pullPlaceholder: false,
+		  // animation on drop
+		  onDrop: function  (item, targetContainer, _super) {
+			var clonedItem = $('<li/>').css({height: 0})
+			item.before(clonedItem)
+			clonedItem.animate({'height': item.height()})
+			
+			item.animate(clonedItem.position(), function () {
+			  clonedItem.detach()
+			  _super(item)
+			})
+			
+			var songsSize = $('.songs ul li').length;
+			if(songsSize > 2){
+				$('.secondSong').remove()
+				$('.suggestedSongs ul').append('<li style="width:100%"><div class="rdSong" ><div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"><img src="examplesong4.png" style="width:100%; height:100%;"></a></div></div></li>')
+				item.addClass('secondSong');
+				
+				data.datasets[1].data = [45, 12, 34, 45, 56];
+				var myLineChart = new Chart(ctx).Line(data, {
+					bezierCurve: false,
+					datasetFill : false,
+					scaleShowGridLines : false,
+				});
+
+				item.click(function() {
+					$('.progress-bar').css('background-color','#1C6BA0');
+					
+					$('#popover1').attr('data-content', "1.5 Million Followers");
+					$('#popover2').attr('data-content', "1.5 Million Shares");
+					$('#popover3').attr('data-content', "800,000 Likes");
+					$('#popover4').attr('data-content', "55,225 Comments");
+					
+				});	
+			}
+		},
+
+		  // set item relative to cursor position
+		  onDragStart: function ($item, container, _super) {
+			var offset = $item.offset(),
+			pointer = container.rootGroup.pointer
+
+			adjustment = {
+			  left: pointer.left - offset.left,
+			  top: pointer.top - offset.top
+			}
+
+			_super($item, container)
+		  },
+		  
+		  onDrag: function ($item, position) {
+			$item.css({
+			  left: position.left - adjustment.left,
+			  top: position.top - adjustment.top
+			})
+		  }
+		})
+		
+				//chart stuff
+		Chart.defaults.global.responsive = true;
+		Chart.defaults.global.scaleShowLabels = false;
+		var data = {
+			labels: ["TEMPO", "BASS", "TREBLE", "MELODY", "HARMONY"],
+			datasets: [
+				{
+					label: "Original Song",
+					fillColor: "rgba(220,220,220,0.2)",
+					strokeColor: "#FF8000",
+					pointColor: "#FF8000",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(220,220,220,1)",
+					data: [99, 59, 80, 81, 15]
+				},
+				
+				{
+					label: "Secong Song",
+					fillColor: "rgba(220,220,220,0.2)",
+					strokeColor: "#1C6BA0",
+					pointColor: "#1C6BA0",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(220,220,220,1)",
+					data: []
+				},
+			]
+		};
+		
+		var ctx = $("#myChart").get(0).getContext("2d");
+		// This will get the first returned node in the jQuery collection.
+		var myLineChart = new Chart(ctx).Line(data, {
+			bezierCurve: false,
+			datasetFill : false,
+			scaleShowGridLines : false,
+		});
+	})
+	</script>
+  </body>
+</html>

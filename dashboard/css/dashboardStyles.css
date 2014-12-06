@@ -1,0 +1,143 @@
+body {
+	margin: 2% 2% 2% 2%;
+}
+
+.nav{
+	width:960px;
+	border-bottom:3px solid #ddd;
+}
+
+.nav li{
+	width:10%;
+	text-align:center;
+}
+
+.tab-content{
+	background-color:white;
+	border-bottom:3px solid #ddd;
+	border-left:3px solid #ddd;
+	border-right:3px solid #ddd;
+	text-align: center;
+	height: 350px;
+	width: 960px;
+}
+
+.progress {
+	width:90%;
+	height:10%;
+	margin-left: auto ;
+	margin-right: auto ;
+}
+
+.suggestedSongs{
+	margin-top: 4px;
+	float: right;
+	width: 15%;
+	height: 100%;
+}
+
+.songs {
+	margin-top: 14px;
+	float: right;
+	width: 15%;
+	height: 350px;
+}
+
+.menu{
+	margin-top:10px;
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+
+.thumbnail {
+	background-color:#D3D3D3;
+}
+
+.originalSong  .thumbnail {
+	background-color:#FF8000;
+}
+
+.home  .thumbnail {
+	background-color:#FF8000;
+}
+
+.secondSong  .thumbnail {
+	background-color:#1C6BA0;
+}
+
+.graph{
+	float: right;
+	height: 100%;
+	width: 60%;
+}
+
+.songs .thumbnail {
+	width: 105px;
+	height: 150px;
+}
+
+.songs .originalSong{
+	float:right;
+}
+
+.songs .secondSong{
+	float:right;
+}
+
+.suggestedSongs .thumbnail{
+	width: 105px;
+	height: 86.5px;
+}
+
+.suggestedSongs .stSong{
+	float:right;
+}
+
+.suggestedSongs .ndSong{
+	float:right;
+}
+
+.suggestedSongs .rdSong{
+	float:right;
+}
+
+.menu .thumbnail{
+	width: 60px;
+	height: 50px;
+}
+
+.menu .home{
+	float:right;
+}
+
+.menu .follows{
+	float:right;
+}
+
+.menu .shares{
+	float:right;
+}
+
+.menu .likes{
+	float:right;
+}
+
+.menu .comments{
+	float:right;
+}
+
+.progress-bar {
+	background-color:#FF8000;
+}
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+	
